@@ -1,0 +1,50 @@
+package com.github.GandhiTC.java.SeleniumTestSnippets.code;
+
+
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class Alerts
+{
+	public static void main(String[] args)
+	{
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/Drivers/ChromeDriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://demo.guru99.com/test/delete_customer.php");
+		driver.findElement(By.name("cusid")).sendKeys("53920");
+		driver.findElement(By.name("submit")).submit();
+
+		if(isAlertPresent(driver) == true)
+		{
+			Alert alerter = driver.switchTo().alert();
+			System.out.println(alerter.getText());
+			alerter.dismiss();
+			driver.switchTo().defaultContent();
+		}
+		
+		driver.quit();
+	}
+
+
+	public static boolean isAlertPresent(WebDriver driver)
+	{
+		try
+		{
+			driver.switchTo().alert();
+			return true;
+		}
+		catch(NoAlertPresentException Ex)
+		{
+			driver.switchTo().defaultContent();
+			System.out.println("\n\n" + Ex + "\n\n");
+			return false;
+		}
+	}
+}

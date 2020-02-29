@@ -28,10 +28,12 @@ public class JQuery_CheckBoxes
 	    JavascriptExecutor 	js 			= (JavascriptExecutor) driver;
 
 	    //	Locate all the Checkboxes which are checked by calling jQuery.find() method, which returns elements in array
-//	    List<WebElement> 	elements 	= (List<WebElement>) js.executeScript("return jQuery.find(':checked')");
+//	    @SuppressWarnings("unchecked")
+//		List<WebElement> 	elements 	= (List<WebElement>) js.executeScript("return jQuery.find(':checked')");
 	    
 	    //	Locate all the Checkboxes which are unchecked
-	    List<WebElement> 	elements 	= (List<WebElement>) js.executeScript("return jQuery.find('input:checkbox:not(:checked)')");
+	    @SuppressWarnings("unchecked")
+		List<WebElement> 	elements 	= (List<WebElement>) js.executeScript("return jQuery.find('input:checkbox:not(:checked)')");
 
 	    //	Verify three unchecked boxes
 	    Assert.assertEquals(elements.size(), 3);

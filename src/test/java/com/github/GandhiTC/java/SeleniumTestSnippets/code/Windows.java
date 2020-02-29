@@ -27,6 +27,8 @@ This code will open empty new Tab.
 This code emulates pressing Control+T on the keyboard, which opens a new tab, its better than the previous code
 	WebElement body = driver.FindElement(By.TagName("body"));
 	body.SendKeys(Keys.Control + 't');
+	
+	to open a new window, use Control + N
 */
 
 

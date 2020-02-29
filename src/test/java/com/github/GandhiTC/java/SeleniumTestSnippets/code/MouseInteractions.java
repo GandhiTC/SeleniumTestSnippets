@@ -13,9 +13,6 @@ import org.testng.annotations.Test;
 
 public class MouseInteractions
 {
-	public WebDriver driver;
-
-
 	@Test
 	public void DoSomething() throws InterruptedException
 	{

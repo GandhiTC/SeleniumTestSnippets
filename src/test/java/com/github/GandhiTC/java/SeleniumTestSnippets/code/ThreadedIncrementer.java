@@ -29,17 +29,10 @@ public class ThreadedIncrementer implements Runnable
 	{
 		this.value = 0;
 	}
-	
-	
-	public synchronized long threadID()
-	{
-		return Thread.currentThread().getId();
-	}
 
 
 	@Override
 	public void run()
 	{
-		
 	}
 }

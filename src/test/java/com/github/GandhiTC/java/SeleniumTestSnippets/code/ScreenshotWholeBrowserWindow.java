@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ScreenshotWholeBrowserWindow
 {
 	private static final 	String 	userDir			= System.getProperty("user.dir");
+	private static final	String	resourcePath	= userDir + "\\src\\test\\resources\\";
 	private static final 	String 	screenshotPath 	= userDir + "\\Screenshots";
 	
 	
@@ -37,8 +38,8 @@ public class ScreenshotWholeBrowserWindow
 		}
 		finally
 		{
-			File	f1	= new File(userDir + "\\screenshot.au3");
-			File	f2	= new File(userDir + "\\screenshot.exe");
+			File	f1	= new File(resourcePath + "screenshot.au3");
+			File	f2	= new File(resourcePath + "screenshot.exe");
 
 			if(f1.exists())
 			{
@@ -60,8 +61,8 @@ public class ScreenshotWholeBrowserWindow
 		try
 		{
 			File 			pics 	  = new File(screenshotPath);
-			File			file	  = new File(userDir + "\\screenshot.au3");
-			File			compiled  = new File(userDir + "\\screenshot.exe");
+			File			file	  = new File(resourcePath + "screenshot.au3");
+			File			compiled  = new File(resourcePath + "screenshot.exe");
 			int 			maxTries1 = 0;
 			int 			maxTries2 = 0;
 			
@@ -83,7 +84,7 @@ public class ScreenshotWholeBrowserWindow
 			
 			
 			//	Compile the .au3 file
-			Runtime.getRuntime().exec(new String[] {userDir + "\\Aut2exe.exe", "/in", "\"" + userDir + "\\screenshot.au3\""});
+			Runtime.getRuntime().exec(new String[] {resourcePath + "Aut2exe.exe", "/in", "\"" + resourcePath + "screenshot.au3\""});
 			
 			
 			//	Wait for file to finish compiling
@@ -103,7 +104,7 @@ public class ScreenshotWholeBrowserWindow
 				
 			
 			//	Once compiled, run the .exe file
-			Process			process   = Runtime.getRuntime().exec(userDir + "\\screenshot.exe");
+			Process			process   = Runtime.getRuntime().exec(resourcePath + "screenshot.exe");
 			
 			
 			//	Wait for the process to complete and terminate itself

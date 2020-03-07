@@ -3,9 +3,15 @@ package com.github.GandhiTC.java.SeleniumTestSnippets.code;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.InvalidElementStateException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,7 +37,19 @@ public class FluentWaiter
 		Wait<WebDriver>	wait		= new FluentWait<WebDriver>(driver)
 											.withTimeout(Duration.ofSeconds(30))
 											.pollingEvery(Duration.ofSeconds(1))
-											.ignoring(NoSuchElementException.class);
+											.ignoreAll(new ArrayList<Class<? extends Throwable>>()
+											{
+										        private static final long serialVersionUID = 1L;
+												{
+										          add(StaleElementReferenceException.class);
+										          add(NoSuchElementException.class);
+										          add(TimeoutException.class);
+										          add(InvalidElementStateException.class);
+										          add(WebDriverException.class);
+										          add(ElementClickInterceptedException.class);
+										        }
+										    })
+											.withMessage("Unable to locate element.");
 		
 		wait.until(ExpectedConditions.visibilityOf(finisher));
 		

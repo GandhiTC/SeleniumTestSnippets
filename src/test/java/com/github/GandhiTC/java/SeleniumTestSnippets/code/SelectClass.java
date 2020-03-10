@@ -27,7 +27,7 @@ public class SelectClass
 	
 
 	@Test
-	public void SelectProgramURL() throws InterruptedException
+	public void multiSelectBox() throws InterruptedException
 	{
 		WebElement	divBox		= driver.findElement(By.xpath("//div[@class='box1 col-md-6 filtered']"));
 		Select 		demo2 		= new Select(driver.findElement(By.id("bootstrap-duallistbox-nonselected-list_duallistbox_demo2")));

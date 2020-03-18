@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /*
 This code will open the link in new Tab.
-	String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL,Keys.RETURN);
+	String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
 	driver.findElement(By.linkText("urlLink")).sendKeys(selectLinkOpeninNewTab);
 
 This code will open empty new Tab.
@@ -29,6 +29,7 @@ This code emulates pressing Control+T on the keyboard, which opens a new tab, it
 	body.SendKeys(Keys.Control + 't');
 	
 	to open a new window, use Control + N
+	to open a link in a new window. use Keys.chord(Keys.SHIFT, Keys.RETURN)
 */
 
 

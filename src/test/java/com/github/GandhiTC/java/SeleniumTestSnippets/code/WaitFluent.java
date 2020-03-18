@@ -21,7 +21,7 @@ import org.testng.Assert;
 
 
 
-public class FluentWaiter
+public class WaitFluent
 {
 	public static void main(String[] args)
 	{

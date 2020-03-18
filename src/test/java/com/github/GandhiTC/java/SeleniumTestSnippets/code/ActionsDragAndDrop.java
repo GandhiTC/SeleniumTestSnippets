@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 
 
-public class DragAndDrop
+public class ActionsDragAndDrop
 {
 	@Test
 	public void DoTheWork() throws InterruptedException

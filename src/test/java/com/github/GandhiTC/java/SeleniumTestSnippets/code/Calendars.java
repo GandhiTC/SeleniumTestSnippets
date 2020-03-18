@@ -17,7 +17,9 @@ public class Calendars
 		String	chosenMonth	= "April";
 		String	chosenDate	= "21";
 		
-		System.setProperty("webdriver.chrome.driver", "./src/test/resources/Drivers/ChromeDriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/Drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.args", "--disable-logging");
+		System.setProperty("webdriver.chrome.silentOutput", "true");
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("http://www.path2usa.com/travel-companions/");

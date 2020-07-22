@@ -24,7 +24,7 @@ public class Hidden
 		
 		WebElement fromPlace = driver.findElement(By.xpath("//input[@id='fromPlaceName']"));
 		fromPlace.click();
-		fromPlace.sendKeys("BENG");
+		fromPlace.sendKeys("BEN");
 		Thread.sleep(1000);
 		
 		// Javascript DOM can extract hidden elements

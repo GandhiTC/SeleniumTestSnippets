@@ -357,11 +357,9 @@ public class Tables_Dynamic
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("window.focus();");
 		
-		Robot robot;
-
 		try
 		{
-			robot = new Robot();
+			Robot robot = new Robot();
 			
 			//	pressing keys
 			robot.keyPress(KeyEvent.VK_WINDOWS);
